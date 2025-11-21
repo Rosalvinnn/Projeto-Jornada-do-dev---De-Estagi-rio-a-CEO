@@ -16,3 +16,41 @@ Projeto produzido durante o estudo do paradigma POO em Java.
 
 <br>
 
+<p align="center">
+  <img alt="capa" src="Capa - Semana Vida Plena.jpg" width="100%">
+</p>
+
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- Java
+- Github
+
+## 💻 Projeto
+
+Jornada do Dev é um jogo de console onde o jogador progride na carreira de desenvolvedor, desde Estagiário até CEO. Ele deve trabalhar em projetos, lidar com desafios, comprar cursos, ganhar XP e evoluir cargos. 
+
+O jogo implementa:
+
+- Classes: Desenvolvedor, Projeto (abstrata), ProjetoWeb, ProjetoMobile, ProjetoIA, Desafio, Carreira e Main.  
+- Encapsulamento, herança, polimorfismo, exceções personalizadas.
+- Uso de ArrayList, eventos aleatórios, loja de cursos e sistema de progressão.
+- Easter egg: Modo Dev Noturno.
+
+## ☕ Demonstração
+
+  
+## 👥 Integrantes
+
+Os integrantes do projeto são:
+
+- Lucas Hudson
+- Mateus José    
+- Rosalvo Alves
+
+## :memo: Licença
+
+Este projeto é de uso *educacional* e *não possui fins comerciais*.
+
