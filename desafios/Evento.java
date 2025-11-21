@@ -39,10 +39,10 @@ public class Evento {
 
             case "2":
                 if (rand.nextInt(100) < 50) {
-                    System.out.println("🎯 A solução alternativa funcionou! +30 XP");
+                    System.out.println("A solução alternativa funcionou! +30 XP");
                     d.perderXp(+30);
                 } else {
-                    System.out.println("💥 A alternativa deu errado! -30 XP e -50$");
+                    System.out.println("A alternativa deu errado! -30 XP e -50$");
                     d.perderXp(-30);
                     d.adicionarDinheiro(-50);
                 }
@@ -50,7 +50,7 @@ public class Evento {
 
             case "3":
                 if (!d.getHabilidades().isEmpty()) {
-                    System.out.println("🧠 Você usou suas habilidades! +20 XP extra.");
+                    System.out.println("Você usou suas habilidades! +20 XP extra.");
                     d.perderXp(+20);
                 }
                 aplicarImpactoPadrao(d);
@@ -58,10 +58,10 @@ public class Evento {
 
             case "4":
                 if (d.getDinheiro() >= 30) {
-                    System.out.println("🤝 Você contratou ajuda e evitou o impacto.");
+                    System.out.println("Você contratou ajuda e evitou o impacto.");
                     d.adicionarDinheiro(-30);
                 } else {
-                    System.out.println("💸 Sem dinheiro, impacto padrão aplicado.");
+                    System.out.println("Sem dinheiro, impacto padrão aplicado.");
                     aplicarImpactoPadrao(d);
                 }
                 break;
