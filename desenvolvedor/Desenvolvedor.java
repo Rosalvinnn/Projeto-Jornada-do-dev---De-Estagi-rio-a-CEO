@@ -27,7 +27,7 @@ public class Desenvolvedor {
 
     public void toggleDevNoturno() {
         devNoturnoAtivo = !devNoturnoAtivo;
-        System.out.println(devNoturnoAtivo ? "🔥 Modo Dev Noturno ativado! XP extra por trabalhar de madrugada!" : "🌞 Modo Dev Noturno desativado.");
+        System.out.println(devNoturnoAtivo ? "Modo Dev Noturno ativado! XP extra por trabalhar de madrugada!" : "Modo Dev Noturno desativado.");
     }
 
 public void trabalharEmProjeto(Projeto p, Scanner sc) {
