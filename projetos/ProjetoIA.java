@@ -7,6 +7,6 @@ public class ProjetoIA extends Projeto {
 
     @Override
     public void concluirProjeto() {
-        System.out.println("🤖 Inteligência Artificial treinada com sucesso!");
+        System.out.println("Inteligência Artificial treinada com sucesso!");
     }
 }
