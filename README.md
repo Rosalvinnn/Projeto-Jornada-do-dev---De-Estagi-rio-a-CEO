@@ -7,7 +7,6 @@ Projeto produzido durante o estudo do paradigma POO em Java.
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-instru%C3%A7%C3%B5es-de-execu%C3%A7%C3%A3o">Instruções de Execução</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-demonstra%C3%A7%C3%A3o">Demonstração</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-integrantes">Integrantes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
@@ -17,7 +16,7 @@ Projeto produzido durante o estudo do paradigma POO em Java.
 <br>
 
 <p align="center">
-  <img alt="capa" src="Capa - Semana Vida Plena.jpg" width="100%">
+  <img alt="capa" src="CAPA.jpg" width="100%">
 </p>
 
 
@@ -40,6 +39,10 @@ O jogo implementa:
 - Easter egg: Modo Dev Noturno.
 
 ## ☕ Demonstração
+
+<p align="left">
+  <img alt="demo" src="Demonstração.jpg" width="40%">
+</p>
 
   
 ## 👥 Integrantes
