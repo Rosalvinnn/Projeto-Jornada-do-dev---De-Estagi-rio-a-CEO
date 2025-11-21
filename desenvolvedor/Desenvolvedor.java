@@ -70,8 +70,7 @@ public void trabalharEmProjeto(Projeto p, Scanner sc) {
         default:
             System.out.println("Opção inválida. Nenhum bônus aplicado.");
     }
-
-    // ganhos reais
+    
     int ganhoXP = p.getRecompensa() + bonusXP;
     int ganhoDinheiro = p.getRecompensa() / 2 + p.getDificuldade()*10;
 
