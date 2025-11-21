@@ -7,6 +7,6 @@ public class ProjetoWeb extends Projeto {
 
     @Override
     public void concluirProjeto() {
-        System.out.println("🌐 Você desenvolveu um site moderno e responsivo!");
+        System.out.println("Você desenvolveu um site moderno e responsivo!");
     }
 }
