@@ -43,7 +43,7 @@ public class Carreira {
                 return;
             }
             dev.trabalharEmProjeto(projetos.get(id), sc);
-            // chance de evento após projeto
+            
             if (random.nextInt(100) < 40) {
                 Evento e = eventos.get(random.nextInt(eventos.size()));
                 System.out.println("Evento apareceu: " + e.getDescricao());
