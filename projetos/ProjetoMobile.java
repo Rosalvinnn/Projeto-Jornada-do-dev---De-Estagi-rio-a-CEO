@@ -7,6 +7,6 @@ public class ProjetoMobile extends Projeto {
 
     @Override
     public void concluirProjeto() {
-        System.out.println("📱 App Mobile criado com sucesso!");
+        System.out.println("App Mobile criado com sucesso!");
     }
 }
