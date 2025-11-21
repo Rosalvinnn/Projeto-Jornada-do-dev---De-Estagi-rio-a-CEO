@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Desenvolvedor {
     private String nome;
-    private String nivel; // Junior, Pleno, Senior, CEO
+    private String nivel;
     private int xp;
     private int dinheiro;
     private ArrayList<String> habilidades = new ArrayList<>();
@@ -17,7 +17,7 @@ public class Desenvolvedor {
         this.nome = nome;
         this.nivel = "Junior";
         this.xp = 0;
-        this.dinheiro = 200; // dinheiro inicial
+        this.dinheiro = 200; 
 
         if (nome.equalsIgnoreCase("Lucas")) {
             this.dinheiro = 5000;
@@ -54,16 +54,16 @@ public void trabalharEmProjeto(Projeto p, Scanner sc) {
             break;
 
         case "2":
-            System.out.println("🙂 Feito com calma, sem bônus.");
+            System.out.println("Feito com calma, sem bônus.");
             break;
 
         case "3":
             if (dinheiro >= 20) {
-                System.out.println("📚 Você pesquisou bastante! +20 XP extra.");
+                System.out.println("Você pesquisou bastante! +20 XP extra.");
                 dinheiro -= 20;
                 bonusXP += 20;
             } else {
-                System.out.println("💸 Dinheiro insuficiente para pesquisar.");
+                System.out.println("Dinheiro insuficiente para pesquisar.");
             }
             break;
 
@@ -78,13 +78,13 @@ public void trabalharEmProjeto(Projeto p, Scanner sc) {
     if (devNoturnoAtivo) {
         ganhoXP += 20;
         ganhoDinheiro += 10;
-        System.out.println("🌙 Bônus Dev Noturno aplicado!");
+        System.out.println("Bônus Dev Noturno aplicado!");
     }
 
     xp += ganhoXP;
     dinheiro += ganhoDinheiro;
 
-    System.out.println("💼 Projeto concluído! XP final ganho: " + ganhoXP + ", Dinheiro: $" + ganhoDinheiro);
+    System.out.println("Projeto concluído! XP final ganho: " + ganhoXP + ", Dinheiro: $" + ganhoDinheiro);
 }
 
     public void estudar(String habilidade, int custo) {
@@ -95,7 +95,7 @@ public void trabalharEmProjeto(Projeto p, Scanner sc) {
         dinheiro -= custo;
         habilidades.add(habilidade);
         xp += 15;
-        System.out.println("📘 Curso adquirido: " + habilidade + " | XP +15");
+        System.out.println("Curso adquirido: " + habilidade + " | XP +15");
     }
 
     public void adicionarHabilidade(String h) {
@@ -103,7 +103,7 @@ public void trabalharEmProjeto(Projeto p, Scanner sc) {
     }
 
     public void perderXp(int quantidade) {
-        xp += quantidade; // quantidade pode ser negativa
+        xp += quantidade; 
         System.out.println("XP perdido/ganho: " + quantidade);
         if (xp < 0) xp = 0;
     }
@@ -117,17 +117,17 @@ public void trabalharEmProjeto(Projeto p, Scanner sc) {
             case "Junior":
                 if (xp < 100) throw new Exception("XP insuficiente para virar Pleno!");
                 nivel = "Pleno";
-                System.out.println("🏆 Promoção! Agora você é Pleno.");
+                System.out.println("Promoção! Agora você é Pleno.");
                 break;
             case "Pleno":
                 if (xp < 250) throw new Exception("XP insuficiente para virar Sênior!");
                 nivel = "Senior";
-                System.out.println("🏆 Promoção! Agora você é Sênior.");
+                System.out.println("Promoção! Agora você é Sênior.");
                 break;
             case "Senior":
                 if (xp < 500) throw new Exception("XP insuficiente para virar CEO!");
                 nivel = "CEO";
-                System.out.println("🏆 Promoção máxima! Agora você é CEO.");
+                System.out.println("Promoção máxima! Agora você é CEO.");
                 break;
             case "CEO":
                 System.out.println("Você já é CEO!");
