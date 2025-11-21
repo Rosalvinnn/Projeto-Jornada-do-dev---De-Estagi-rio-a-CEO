@@ -64,7 +64,7 @@ public class Main {
                     System.out.println("Opção inválida.");
             }
             if (dev.getNivel().equals("CEO")) {
-                System.out.println("\n🎉 Você alcançou CEO! Parabéns — fim do jogo.");
+                System.out.println("\nVocê alcançou CEO! Parabéns — fim do jogo.");
                 running = false;
             }
         }
