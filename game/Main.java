@@ -29,31 +29,31 @@ public class Main {
             System.out.println("6 - Ver status");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
-            String escolha = sc.nextLine().trim();
+            int escolha = sc.nextInt();
 
             switch (escolha) {
-                case "1":
+                case 1:
                     carreira.menuProjetos(sc);
                     break;
-                case "2":
+                case 2:
                     loja.mostrarCursos();
                     System.out.print("Digite o ID do curso para comprar (ou ENTER para cancelar): ");
                     String id = sc.nextLine().trim();
                     if (!id.isEmpty()) loja.comprarCurso(id);
                     break;
-                case "3":
+                case 3:
                     loja.menuLoja(sc);
                     break;
-                case "4":
+                case 4:
                     carreira.menuEvento(sc);
                     break;
-                case "5":
+                case 5:
                     carreira.tentarSubir(sc);
                     break;
-                case "6":
+                case 6:
                     System.out.println(dev.getStatus());
                     break;
-                case "0":
+                case 0:
                     running = false;
                     break;
                 default:
