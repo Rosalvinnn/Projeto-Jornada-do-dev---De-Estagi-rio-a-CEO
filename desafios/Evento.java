@@ -21,7 +21,7 @@ public class Evento {
     public boolean isOpcional() { return opcional; }
 
     public void aplicarEnfrentar(Desenvolvedor d, Scanner sc) {
-        System.out.println("\n⚠ Evento: " + descricao);
+        System.out.println("\n Evento: " + descricao);
         System.out.println("Como deseja reagir?");
         System.out.println("1 - Enfrentar diretamente (resultado padrão)");
         System.out.println("2 - Tentar solução alternativa (50% bom, 50% ruim)");
