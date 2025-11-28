@@ -26,8 +26,7 @@ public class Main {
             System.out.println("3 - Visitar loja");
             System.out.println("4 - Enfrentar evento/desafio");
             System.out.println("5 - Tentar subir de cargo");
-            System.out.println("6 - Ativar/Desativar Dev Noturno");
-            System.out.println("7 - Ver status");
+            System.out.println("6 - Ver status");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
             String escolha = sc.nextLine().trim();
@@ -52,9 +51,6 @@ public class Main {
                     carreira.tentarSubir(sc);
                     break;
                 case "6":
-                    dev.toggleDevNoturno();
-                    break;
-                case "7":
                     System.out.println(dev.getStatus());
                     break;
                 case "0":
@@ -63,11 +59,13 @@ public class Main {
                 default:
                     System.out.println("Opção inválida.");
             }
+
             if (dev.getNivel().equals("CEO")) {
                 System.out.println("\nVocê alcançou CEO! Parabéns — fim do jogo.");
                 running = false;
             }
         }
+
         System.out.println("\nObrigado por jogar. Nível final: " + dev.getNivel() + " | XP: " + dev.getXp() + " | Dinheiro: $" + dev.getDinheiro());
         sc.close();
     }
