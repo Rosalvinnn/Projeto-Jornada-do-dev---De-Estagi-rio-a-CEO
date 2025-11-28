@@ -80,7 +80,7 @@ public class Carreira {
         try {
             dev.subirDeCargo();
         } catch (Exception ex) {
-            System.out.println("➡ Evolução pausada: " + ex.getMessage());
+            System.out.println("Evolução pausada: " + ex.getMessage());
             System.out.print("Deseja tentar cumprir requisitos agora estudando/aceitando eventos? (s/n): ");
             String r = sc.nextLine().trim();
             if (r.equalsIgnoreCase("s")) {
