@@ -11,80 +11,68 @@ public class Desenvolvedor {
     private int xp;
     private int dinheiro;
     private ArrayList<String> habilidades = new ArrayList<>();
-    private boolean devNoturnoAtivo = false;
 
     public Desenvolvedor(String nome) {
         this.nome = nome;
         this.nivel = "Junior";
         this.xp = 0;
-        this.dinheiro = 200; 
+        this.dinheiro = 200;
 
         if (nome.equalsIgnoreCase("Lucas")) {
             this.dinheiro = 5000;
-            System.out.println("Esse nome é muito interessante...");
+            System.out.println("'Lucas'... Esse nome é muito interessante...");
         }
     }
 
-    public void toggleDevNoturno() {
-        devNoturnoAtivo = !devNoturnoAtivo;
-        System.out.println(devNoturnoAtivo ? "Modo Dev Noturno ativado! XP extra por trabalhar de madrugada!" : "Modo Dev Noturno desativado.");
+    public void trabalharEmProjeto(Projeto p, Scanner sc) {
+        p.concluirProjeto();
+
+        System.out.println("\nComo deseja resolver este projeto?");
+        System.out.println("1 - Fazer rápido (chance de erro: 40%) | +10 XP se acertar");
+        System.out.println("2 - Fazer com calma (garantido) | sem bônus");
+        System.out.println("3 - Pesquisar antes (custa 20$) | +20 XP extra garantido");
+        System.out.print("Escolha: ");
+        String escolha = sc.nextLine().trim();
+
+        int bonusXP = 0;
+
+        switch (escolha) {
+            case "1":
+                if (new Random().nextInt(100) < 60) {
+                    System.out.println("Feito rápido e funcionou!");
+                    bonusXP += 10;
+                } else {
+                    System.out.println("Erro no caminho rápido! -10 XP");
+                    bonusXP -= 10;
+                }
+                break;
+
+            case "2":
+                System.out.println("Feito com calma, sem bônus.");
+                break;
+
+            case "3":
+                if (dinheiro >= 20) {
+                    System.out.println("Você pesquisou bastante! +20 XP extra.");
+                    dinheiro -= 20;
+                    bonusXP += 20;
+                } else {
+                    System.out.println("Dinheiro insuficiente para pesquisar.");
+                }
+                break;
+
+            default:
+                System.out.println("Opção inválida. Nenhum bônus aplicado.");
+        }
+
+        int ganhoXP = p.getRecompensa() + bonusXP;
+        int ganhoDinheiro = p.getRecompensa() / 2 + p.getDificuldade() * 10;
+
+        xp += ganhoXP;
+        dinheiro += ganhoDinheiro;
+
+        System.out.println("Projeto concluído! XP final ganho: " + ganhoXP + ", Dinheiro: $" + ganhoDinheiro);
     }
-
-public void trabalharEmProjeto(Projeto p, Scanner sc) {
-    p.concluirProjeto();
-
-    System.out.println("\nComo deseja resolver este projeto?");
-    System.out.println("1 - Fazer rápido (chance de erro: 40%) | +10 XP se acertar");
-    System.out.println("2 - Fazer com calma (garantido) | sem bônus");
-    System.out.println("3 - Pesquisar antes (custa 20$) | +20 XP extra garantido");
-    System.out.print("Escolha: ");
-    String escolha = sc.nextLine().trim();
-
-    int bonusXP = 0;
-
-    switch (escolha) {
-        case "1":
-            if (new Random().nextInt(100) < 60) {
-                System.out.println("Feito rápido e funcionou!");
-                bonusXP += 10;
-            } else {
-                System.out.println("Erro no caminho rápido! -10 XP");
-                bonusXP -= 10;
-            }
-            break;
-
-        case "2":
-            System.out.println("Feito com calma, sem bônus.");
-            break;
-
-        case "3":
-            if (dinheiro >= 20) {
-                System.out.println("Você pesquisou bastante! +20 XP extra.");
-                dinheiro -= 20;
-                bonusXP += 20;
-            } else {
-                System.out.println("Dinheiro insuficiente para pesquisar.");
-            }
-            break;
-
-        default:
-            System.out.println("Opção inválida. Nenhum bônus aplicado.");
-    }
-    
-    int ganhoXP = p.getRecompensa() + bonusXP;
-    int ganhoDinheiro = p.getRecompensa() / 2 + p.getDificuldade()*10;
-
-    if (devNoturnoAtivo) {
-        ganhoXP += 20;
-        ganhoDinheiro += 10;
-        System.out.println("Bônus Dev Noturno aplicado!");
-    }
-
-    xp += ganhoXP;
-    dinheiro += ganhoDinheiro;
-
-    System.out.println("Projeto concluído! XP final ganho: " + ganhoXP + ", Dinheiro: $" + ganhoDinheiro);
-}
 
     public void estudar(String habilidade, int custo) {
         if (dinheiro < custo) {
@@ -93,7 +81,7 @@ public void trabalharEmProjeto(Projeto p, Scanner sc) {
         }
         dinheiro -= custo;
         habilidades.add(habilidade);
-        xp += 15;
+        xp += 50;
         System.out.println("Curso adquirido: " + habilidade + " | XP +15");
     }
 
@@ -102,7 +90,7 @@ public void trabalharEmProjeto(Projeto p, Scanner sc) {
     }
 
     public void perderXp(int quantidade) {
-        xp += quantidade; 
+        xp += quantidade;
         System.out.println("XP perdido/ganho: " + quantidade);
         if (xp < 0) xp = 0;
     }
@@ -134,19 +122,19 @@ public void trabalharEmProjeto(Projeto p, Scanner sc) {
         }
     }
 
-public int getXpNecessarioParaProximoCargo() {
-    switch (nivel) {
-        case "Junior":
-            return Math.max(0, 100 - xp);   
-        case "Pleno":
-            return Math.max(0, 250 - xp);   
-        case "Senior":
-            return Math.max(0, 500 - xp);   
-        case "CEO":
-            return 0;                       
+    public int getXpNecessarioParaProximoCargo() {
+        switch (nivel) {
+            case "Junior":
+                return Math.max(0, 100 - xp);
+            case "Pleno":
+                return Math.max(0, 250 - xp);
+            case "Senior":
+                return Math.max(0, 500 - xp);
+            case "CEO":
+                return 0;
+        }
+        return 0;
     }
-    return 0;
-}
 
     public String getNivel() { return nivel; }
     public int getXp() { return xp; }
@@ -155,13 +143,12 @@ public int getXpNecessarioParaProximoCargo() {
     public ArrayList<String> getHabilidades() { return habilidades; }
 
     public String getStatus() {
-    int falta = getXpNecessarioParaProximoCargo();
-    String msgFalta = nivel.equals("CEO") ? "Você já atingiu o nível máximo!" :
-            "XP restante para o próximo cargo: " + falta;
+        int falta = getXpNecessarioParaProximoCargo();
+        String msgFalta = nivel.equals("CEO") ? "Você já atingiu o nível máximo!" :
+                "XP restante para o próximo cargo: " + falta;
 
-    return String.format(
-        "Nome: %s | Nível: %s | XP: %d | Dinheiro: $%d | Habilidades: %s\n%s",
-        nome, nivel, xp, dinheiro, habilidades.toString(), msgFalta);
+        return String.format(
+                "Nome: %s | Nível: %s | XP: %d | Dinheiro: $%d | Habilidades: %s\n%s",
+                nome, nivel, xp, dinheiro, habilidades.toString(), msgFalta);
     }
 }
-
