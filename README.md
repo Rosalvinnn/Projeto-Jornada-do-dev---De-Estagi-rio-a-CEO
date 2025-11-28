@@ -36,12 +36,12 @@ O jogo implementa:
 - Classes: Desenvolvedor, Projeto (abstrata), ProjetoWeb, ProjetoMobile, ProjetoIA, Desafio, Carreira e Main.  
 - Encapsulamento, herança, polimorfismo, exceções personalizadas.
 - Uso de ArrayList, eventos aleatórios, loja de cursos e sistema de progressão.
-- Easter egg: Modo Dev Noturno.
+- Easter egg: Nome Secreto.
 
 ## ☕ Demonstração
 
 <p align="left">
-  <img alt="demo" src="Demonstração.jpg" width="40%">
+  <img alt="demo" src="Demonstração.jpg" width="60%">
 </p>
 
   
